@@ -41,7 +41,6 @@ function suma(x, y) {
   // Tu código:
     let resultado = x+y;
     return resultado;
-  
 }
 
 function resta(x, y) {
