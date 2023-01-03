@@ -1,20 +1,37 @@
 // No cambies los nombres de las funciones.
 
+const { join } = require("@11ty/eleventy/src/TemplatePath");
+
+devolverPrimerElemento(["hola","chao"]);
+devolverUltimoElemento(["hola","chao", "si"]);
+obtenerLargoDelArray(["hola","chao", "si"]);
+incrementarPorUno([1,2,3,4,5]);
+agregarItemAlFinalDelArray([1,2,3,4,5],6);
+agregarItemAlComienzoDelArray([1,2,3,4,5],6);
+dePalabrasAFrase(['Hello', 'world!']);
+arrayContiene([1,2,3,4,5],6);
+agregarNumeros([1,2,3,4,5]);
+promedioResultadosTest([1,2,3,4,5]);
+numeroMasGrande([1,2,3,4,5]);
+
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  return array[0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array[array.length - 1];
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+return array.length;
 }
 
 
@@ -23,13 +40,20 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-}
 
+  for(let x = 0;x < array.length;x++){
+    array[x] += 1; 
+  }
+return array;
+
+}
 
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento);
+  return array;
 }
 
 
@@ -38,6 +62,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift(elemento);
+  return array;
 }
 
 
@@ -47,6 +73,8 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  var frase = palabras.join(' ');
+  return frase;
 }
 
 
@@ -54,6 +82,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  return array.includes(elemento);
 }
 
 
@@ -61,6 +90,15 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+
+    var suma = 0;
+
+    for(var x = 0; x < numeros.length; x++){
+      suma += numeros[x];
+    }
+
+    return suma;
+
 }
 
 
@@ -68,6 +106,16 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  var sum = 0;
+  var promedio = 0;
+
+  for(var x = 0; x < resultadosTest.length; x++){
+    sum += resultadosTest[x];
+    promedio = (sum / resultadosTest.length);
+  }
+
+  return promedio;
+
 }
 
 
@@ -75,6 +123,17 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  
+  var mayo = 0;
+
+  for(var x = 0; x < numeros.length; x++){
+    if(numeros[x] > mayo){
+      mayo = numeros[x];
+    }
+  }
+
+  return mayo;
+
 }
 
 
